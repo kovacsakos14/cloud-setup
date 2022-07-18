@@ -12,4 +12,4 @@ python3 -m pip install --user ansible
 echo "export PATH=$PATH:~/.local/bin" >> ~/.bashrc
 echo "**** Start setup with ansible ****"
 
-ansible-playbook playbook-20.04.yaml
+ansible-playbook -i root@127.0.0.1, playbook-20.04.yaml
