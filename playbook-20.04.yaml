@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- hosts: 127.0.0.1
+  connection: local
   become: true
   vars:
     created_username: kovacsakos
@@ -74,9 +75,9 @@
         state: latest
         update_cache: true
     
-    - name: adding existing user "{{ created_username }}" to docker group
+    - name: adding existing user to docker group
       user:
-      name: "{{ created_username }}"
-      groups: docker
-      append: yes
+        name: "{{ created_username }}"
+        groups: docker
+        append: yes
     

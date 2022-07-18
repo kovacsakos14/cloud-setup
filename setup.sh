@@ -1,7 +1,14 @@
 #!/bin/bash
 
-echo "***** Configuring custom user, data and useful softwares *****"
+echo "***** Install stuff for ansible *****"
 
-echo "**** Create new user kovacsakos ****"
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install git curl python3.10 python3-apt python3.10-distutils python3.10-venv
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.10 get-pip.py
+python3 -m pip install --user ansible
 
+echo "**** Start setup with ansible ****"
 
+ansible-playbook playbook-20.04.yaml
