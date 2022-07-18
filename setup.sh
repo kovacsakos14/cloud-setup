@@ -9,7 +9,7 @@ update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 2
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 python3 -m pip install --user ansible
-echo "export PATH=$PATH:~/.local/bin"
+echo "export PATH=$PATH:~/.local/bin" >> ~/.bashrc
 echo "**** Start setup with ansible ****"
 
 ansible-playbook playbook-20.04.yaml
