@@ -74,3 +74,9 @@
         state: latest
         update_cache: true
     
+    - name: adding existing user "{{ created_username }}" to docker group
+      user:
+      name: "{{ created_username }}"
+      groups: docker
+      append: yes
+    
